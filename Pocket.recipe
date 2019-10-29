@@ -79,6 +79,7 @@ class Pocket(BasicNewsRecipe):
     max_articles_per_feed = 100
     archive_downloaded = True
     series_name = 'Pocket'
+    tag = 'kindle'
 
     # Inherited developer settings
     auto_cleanup = True
@@ -152,6 +153,7 @@ class Pocket(BasicNewsRecipe):
                     '"access_token":"{1}",'
                     '"count":"{2}",'
                     '"since":"{3}",'
+                    '"tag":"{4}",'
                     '"state":"unread",'
                     '"detailType":"complete",'
                     '"sort":"newest"'
@@ -159,7 +161,8 @@ class Pocket(BasicNewsRecipe):
                     self.consumer_key,
                     self.config.token,
                     self.max_articles_per_feed,
-                    int(time()) - 86400 * self.oldest_article
+                    int(time()) - 86400 * self.oldest_article,
+                    self.tag
                 ),
                 headers = {
                     'Content-Type': 'application/json; charset=UTF8',
