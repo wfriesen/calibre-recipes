@@ -75,9 +75,9 @@ class Pocket(BasicNewsRecipe):
     category = 'info, custom, Pocket'
 
     # User-configurable settings
-    oldest_article = 7
+    oldest_article = 9999
     max_articles_per_feed = 100
-    archive_downloaded = True
+    archive_downloaded = False
     series_name = 'Pocket'
     tag = 'kindle'
 
